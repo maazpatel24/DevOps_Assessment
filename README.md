@@ -44,14 +44,64 @@ Jenkins.
 Dockerfiles, and Kubernetes manifests.
 2. **Branching Strategy:**
     + Create branches for development, testing, and production.
+    ```sh
+    git branch <branch_name>  # create a branch
+    git checkout <brach_name>  # checkout particular branch
+    git add <file_name>  # stage the <file_name>
+    git commit -m "commit-message"  # commit the changes in repository.
+    git push origin <branch_name>  # push the changes to remote repository in particular branch 
+    ```
+    ![Alt text](img/image.png)
+
     + Implement a strategy for merging changes from development to testing and
 production.
+
 
 ## Task 2: Dockerize Microservices
 1. **Create Dockerfiles** for each microservice (front-end, product catalog, order
 processing).
+```sql
+e-commerce-app/
+│
+├── docker-compose.yml
+├── front-end/
+│   ├── Dockerfile
+│   └── index.html
+├── product-catalog/
+│   ├── Dockerfile
+│   └── index.html
+└── order-processing/
+    ├── Dockerfile
+    └── index.html
+```
 2. **Build Docker images** for each microservice and push them to a container registry
 (e.g., Docker Hub).
+
++ Build front-end image
+```bash
+cd e-commerce-app/front-end
+docker build -t your-dockerhub-username/front-end:v1.0 .
+docker push your-dockerhub-username/front-end:v1.0
+```
+![Alt text](img/image-1.png)
+
++ Build product-catalog image
+```bash
+cd e-commerce-app/product-catalog
+docker build -t your-dockerhub-username/product-catalog:v1.0 .
+docker push your-dockerhub-username/product-catalog:v1.0
+```
+![Alt text](img/image-2.png)
+
++ Build order-processing image
+```bash
+cd e-commerce-app/order-processing
+docker build -t your-dockerhub-username/order-processing:v1.0 .
+docker push your-dockerhub-username/order-processing:v1.0
+```
+![Alt text](img/image-3.png)
+
+
 3. **Deliverables:**
     + Dockerfiles for each microservice
     + Built Docker images in a container registry

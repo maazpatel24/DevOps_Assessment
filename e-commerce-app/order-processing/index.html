@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Processing Service</title>
+</head>
+<body>
+    <h1>Welcome to the Order Processing Service</h1>
+    <p>This is the order processing service of our e-commerce application.</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Processing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .order-form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .order-form h1 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+        }
+        .order-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        .order-form input,
+        .order-form select,
+        .order-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .order-form textarea {
+            resize: vertical;
+        }
+        .order-form button {
+            background-color: #5cb85c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-form button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-form">
+        <h1>Place Your Order</h1>
+        <form action="process-order.html" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label for="product">Product</label>
+            <select id="product" name="product" required>
+                <option value="product1">Product 1</option>
+                <option value="product2">Product 2</option>
+                <option value="product3">Product 3</option>
+                <option value="product4">Product 4</option>
+            </select>
+
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
