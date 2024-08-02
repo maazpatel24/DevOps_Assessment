@@ -77,29 +77,29 @@ e-commerce-app/
 2. **Build Docker images** for each microservice and push them to a container registry
 (e.g., Docker Hub).
 
-+ Build front-end image
-```bash
-cd e-commerce-app/front-end
-docker build -t your-dockerhub-username/front-end:v1.0 .
-docker push your-dockerhub-username/front-end:v1.0
-```
-![Alt text](img/image-1.png)
+    + Build front-end image
+    ```bash
+    cd e-commerce-app/front-end
+    docker build -t your-dockerhub-username/front-end:v1.0 .
+    docker push your-dockerhub-username/front-end:v1.0
+    ```
+    ![Alt text](img/image-1.png)
 
-+ Build product-catalog image
-```bash
-cd e-commerce-app/product-catalog
-docker build -t your-dockerhub-username/product-catalog:v1.0 .
-docker push your-dockerhub-username/product-catalog:v1.0
-```
-![Alt text](img/image-2.png)
+    + Build product-catalog image
+    ```bash
+    cd e-commerce-app/product-catalog
+    docker build -t your-dockerhub-username/product-catalog:v1.0 .
+    docker push your-dockerhub-username/product-catalog:v1.0
+    ```
+    ![Alt text](img/image-2.png)
 
-+ Build order-processing image
-```bash
-cd e-commerce-app/order-processing
-docker build -t your-dockerhub-username/order-processing:v1.0 .
-docker push your-dockerhub-username/order-processing:v1.0
-```
-![Alt text](img/image-3.png)
+    + Build order-processing image
+    ```bash
+    cd e-commerce-app/order-processing
+    docker build -t your-dockerhub-username/order-processing:v1.0 .
+    docker push your-dockerhub-username/order-processing:v1.0
+    ```
+    ![Alt text](img/image-3.png)
 
 
 3. **Deliverables:**
@@ -110,7 +110,44 @@ docker push your-dockerhub-username/order-processing:v1.0
 1. **Create Kubernetes manifests** for deploying each microservice.
     + Define Pods, Services, Deployments, and ReplicaSets.
     + Use ConfigMaps and Secrets for configuration management.
+```sql
+Kubernetes-manifests/
+│
+├── front-end/
+│   ├── deployment.yaml
+│   └── service.yaml
+├── product-catalog/
+│   ├── deployment.yaml
+│   └── service.yaml
+└── order-processing/
+    ├── deployment.yaml
+    └── service.yaml
+```
 2. **Deploy the microservices** to a Kubernetes cluster.
+
+```bash
+kubectl apply -f Kubernetes-manifests/front-end/  # Create Deployment and Service for fron-end
+kubectl apply -f Kubernetes-manifests/product-catalog/  # Create Deployment and Service for product-catalog
+kubectl apply -f Kubernetes-manifests/order-processing/  # Create Deployment and Service for order-processing
+```
+![Alt text](img/image-4.png)
+
+![Alt text](img/image-5.png)
+
+![Alt text](img/image-6.png)
+
++ Full Deployment in Development Environment
+![Alt text](img/image-7.png)
+
++ Front End
+![Alt text](img/image-8.png)
+
++ Product Catalog
+![Alt text](img/image-9.png)
+
++ Order Processing
+![Alt text](img/image-10.png)
+
 3. **Deliverables:**
     + Kubernetes manifests (YAML files)
     + Successful deployment of microservices in the Kubernetes cluster

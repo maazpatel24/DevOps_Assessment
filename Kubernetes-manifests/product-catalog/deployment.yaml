@@ -23,23 +23,6 @@ spec:
           ports:
            - containerPort: 80
 
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: dev-product-catalog-service
-  labels:
-    name: product-catalog-service
-    app: product-catalog
-spec:
-  type: NodePort
-  ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30010
-  selector:
-    name: product-catalog-pod
-    app: product-catalog
 
         
     
